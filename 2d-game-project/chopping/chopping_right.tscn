@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4rclqb8ub2mm"]
+
+[ext_resource type="Texture2D" uid="uid://cjr0qu2vvle53" path="res://Base Character - Premium/farming/axe.png" id="1_26pkm"]
+[ext_resource type="Script" path="res://chopping/chopping_right.gd" id="1_xcu5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b25pf"]
+atlas = ExtResource("1_26pkm")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uee4q"]
+atlas = ExtResource("1_26pkm")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7kx3"]
+atlas = ExtResource("1_26pkm")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoaam"]
+atlas = ExtResource("1_26pkm")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1533"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b25pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uee4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7kx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoaam")
+}],
+"loop": true,
+"name": &"chopping right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qku4n"]
+radius = 5.0
+
+[node name="chopping right" type="CharacterBody2D"]
+script = ExtResource("1_xcu5k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_a1533")
+animation = &"chopping right"
+frame = 3
+frame_progress = 0.482434
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -5)
+shape = SubResource("CircleShape2D_qku4n")

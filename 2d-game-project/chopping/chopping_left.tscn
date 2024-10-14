@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cduwf3e1to2hk"]
+
+[ext_resource type="Texture2D" uid="uid://cjr0qu2vvle53" path="res://Base Character - Premium/farming/axe.png" id="1_t7q8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs53a"]
+atlas = ExtResource("1_t7q8b")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rocoj"]
+atlas = ExtResource("1_t7q8b")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw565"]
+atlas = ExtResource("1_t7q8b")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auh4c"]
+atlas = ExtResource("1_t7q8b")
+region = Rect2(240, 80, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5f6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs53a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rocoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw565")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auh4c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0g4o"]
+radius = 4.0
+
+[node name="Chopping left" type="CharacterBody2D"]
+position = Vector2(3, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_f5f6p")
+frame = 1
+frame_progress = 0.123188
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("CircleShape2D_b0g4o")
